@@ -1,0 +1,5 @@
+*.ucdb
+modelsim.ini
+transcript
+covhtmlreport/
+work/
