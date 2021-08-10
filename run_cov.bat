@@ -2,7 +2,7 @@
 
 set COV_REPORT=cov_report
 set LIB_NAME=work
-set PROPS_FILE=source.properties
+set PROPS_FILE=test.conf
 
 :parsePropertiesFile
     if NOT "%1"=="" (set PROPS_PATH=%1) else (set /p PROPS_PATH=Enter source path: )
