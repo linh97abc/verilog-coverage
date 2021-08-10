@@ -3,10 +3,11 @@
 set COV_REPORT=cov_report
 set LIB_NAME=work
 set PROPS_PATH=.
+set PROPS_FILE=source.properties
 
 :parsePropertiesFile
     if NOT "%1"=="" PROPS_PATH=%1
-    set PROPS_FILE=%PROPS_PATH%\source.properties
+    CD /D %PROPS_PATH%
     FOR /F "tokens=*" %%i in ('type %PROPS_FILE% ^| findStr.exe "%1="') do SET %%i
 
 :main
