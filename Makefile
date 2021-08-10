@@ -1,4 +1,4 @@
-V_SOURCE=uart_tx.v uart_rx.v uart_tb.v
+V_SOURCE=uart.v uart_tx.v uart_rx.v uart_tb.v
 TEST_MODULE=uart_tb
 COV_REPORT=cov_rp
 LIB_NAME=work

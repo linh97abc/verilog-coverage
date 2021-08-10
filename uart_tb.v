@@ -49,23 +49,16 @@ module uart_tb ();
         end
     endtask //   UART_WRITE_BYTE
     
-    
-    uart_rx #(.CLKS_PER_BIT(c_CLKS_PER_BIT)) UART_RX_INST
+    uart #(.CLKS_PER_BIT(c_CLKS_PER_BIT)) UART_INST
     (.i_Clock(r_Clock),
     .i_Rx_Serial(r_Rx_Serial),
-    .o_Rx_DV(),
-    .o_Rx_Byte(w_Rx_Byte)
-    );
-    
-    uart_tx #(.CLKS_PER_BIT(c_CLKS_PER_BIT)) UART_TX_INST
-    (.i_Clock(r_Clock),
     .i_Tx_DV(r_Tx_DV),
     .i_Tx_Byte(r_Tx_Byte),
+    .o_Rx_DV(),
+    .o_Rx_Byte(w_Rx_Byte),
     .o_Tx_Active(),
     .o_Tx_Serial(),
-    .o_Tx_Done(w_Tx_Done)
-    );
-    
+    .o_Tx_Done(w_Tx_Done));
     
     always
     #(c_CLOCK_PERIOD_NS/2) r_Clock <= !r_Clock;
@@ -94,7 +87,7 @@ module uart_tb ();
             $display("Test Passed - Correct Byte Received");
         else
             $display("Test Failed - Incorrect Byte Received");
-    
+        
         $finish;
         
     end
