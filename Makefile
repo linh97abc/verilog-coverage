@@ -1,5 +1,5 @@
-V_SOURCE=
-TEST_MODULE=
+V_SOURCE=uart_tx.v uart_rx.v uart_tb.v
+TEST_MODULE=uart_tb
 COV_REPORT=cov_rp
 LIB_NAME=work
 OUTPUT=transcript modelsim.ini ${COV_REPORT}.ucdb ${TEST_MODULE}.vcd
